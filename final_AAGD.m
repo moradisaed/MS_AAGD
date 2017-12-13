@@ -1,7 +1,7 @@
 function out = final_AAGD( img,lmax,lmin )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
-out=zeros(size(img,1),size(img,2),length(lmin)+1);
+out1=zeros(size(img,1),size(img,2),length(lmin));
 for i=1:length(lmin)
     N=lmax(i)^2;
     N1=lmin(i)^2;
@@ -11,6 +11,6 @@ for i=1:length(lmin)
     mu_r=((N*mu_e)-(N1*mu_i))/N2;
     out(:,:,i)=(mu_i-mu_r).^2;
 end
-out(:,:,length(lmin)+1)=max(out(:,:,1:length(lmin)),[],3);
+out=max(out1,[],3);
 end
 
