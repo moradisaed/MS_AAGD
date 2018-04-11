@@ -4,6 +4,7 @@ function out = final_AAGD( img,lmax,lmin )
 
 % Example:
 %          out=final_AAGD(img,[19,19,19,19],[3,5,7,9]);
+img=double(img);
 out1=zeros(size(img,1),size(img,2),length(lmin));
 for i=1:length(lmin)
     N=lmax(i)^2;
